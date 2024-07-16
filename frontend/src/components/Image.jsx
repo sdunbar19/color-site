@@ -1,42 +1,42 @@
-import React, { Component } from 'react'; 
+import React, { useState } from 'react'; 
 import axios from "axios";
 
-class Image extends Component { 
-  imageData = new FormData();
+const Image = () => { 
+  const [color, setColor] = useState("#FFFFFF");
+  const imageData = new FormData();
 
-  handleImageSubmit = (e) => {
+  const handleImageSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://127.0.0.1:8000/api/image/', this.imageData, {
+    axios.post('http://127.0.0.1:8000/api/image/', imageData, {
       headers: {
         'content-type': 'multipart/form-data'
       }
     }).then(res => {
-      console.log(res.data);
+      let data = res.data['data'];
+      setColor(data);
     })
     .catch(err => console.log(err))
   };
 
-  handleImageChange = (e) => {
-    console.log(e)
-    this.imageData.set("image", e.target.files[0])
+  const handleImageChange = (e) => {
+    imageData.set("image", e.target.files[0])
   }
 
-  render() { 
-    return ( 
-      <div>
-        <p> Upload an image for analysis </p>
-        <form onSubmit={this.handleImageSubmit}>
-          <label for="image"> Image: </label>
-          <input type="file"
-                 id="image"
-                 accept="image/png, image/jpeg" 
-                 onChange={this.handleImageChange}
-                 required/>
-          <input type="submit" />
-        </form>
-      </div> 
-    );
-  } 
+  return ( 
+    <div>
+      <p> Upload an image for analysis </p>
+      <form onSubmit={handleImageSubmit}>
+        <label for="image"> Image: </label>
+        <input type="file"
+                id="image"
+                accept="image/png, image/jpeg" 
+                onChange={handleImageChange}
+                required/>
+        <input type="submit" />
+      </form>
+      <div id="results" style={{background : color, height : 100}}></div>
+    </div> 
+  ); 
 }; 
  
 export default Image; 
