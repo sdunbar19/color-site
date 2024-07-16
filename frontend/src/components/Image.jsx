@@ -3,10 +3,13 @@ import axios from "axios";
 
 const Image = () => { 
   const [color, setColor] = useState("#FFFFFF");
-  const imageData = new FormData();
+  const [file, setFile] = useState();
 
   const handleImageSubmit = (e) => {
     e.preventDefault();
+    let imageData = new FormData();
+    imageData.set("image", file);
+    console.log(imageData.get("image"));
     axios.post('http://127.0.0.1:8000/api/image/', imageData, {
       headers: {
         'content-type': 'multipart/form-data'
@@ -19,7 +22,13 @@ const Image = () => {
   };
 
   const handleImageChange = (e) => {
-    imageData.set("image", e.target.files[0])
+    setColor("#FFFFFF");
+    setFile(e.target.files[0]);
+  }
+
+  let renderedImage;
+  if (file != null) {
+    renderedImage = <img src={URL.createObjectURL(file)} alt="user-uploaded" style={{height: 300}}></img>;
   }
 
   return ( 
@@ -34,6 +43,7 @@ const Image = () => {
                 required/>
         <input type="submit" />
       </form>
+      { renderedImage }
       <div id="results" style={{background : color, height : 100}}></div>
     </div> 
   ); 
