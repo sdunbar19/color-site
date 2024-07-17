@@ -3,7 +3,7 @@ import axios from "axios";
 
 const COLOR_DIV_HEIGHT = 200
 const COLOR_DIV_WIDTH = 25
-const URL = 'http://16.171.140.76:8000/api/hsv/'
+const URL = 'http://127.0.0.1:8000/api/hsv/' // 'http://16.171.140.76:8000/api/hsv/'
 
 const HSV = () => { 
     const [hue, setHue] = useState();
