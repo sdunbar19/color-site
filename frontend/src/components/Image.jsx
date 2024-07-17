@@ -1,6 +1,10 @@
 import React, { useState } from 'react'; 
 import axios from "axios";
 
+const COLOR_DIV_HEIGHT = 200
+const COLOR_DIV_WIDTH = 25
+const DJANGO_URL = 'http://127.0.0.1:8000/api/image/'
+
 const Image = () => { 
   const [file, setFile] = useState();
   const [data, setData] = useState({});
@@ -13,7 +17,7 @@ const Image = () => {
     let imageData = new FormData();
     imageData.set("image", file);
     setMessage("Loading, please be patient!")
-    axios.post('http://127.0.0.1:8000/api/image/', imageData, {
+    axios.post(DJANGO_URL, imageData, {
       headers: {
         'content-type': 'multipart/form-data'
       }
@@ -38,12 +42,17 @@ const Image = () => {
   }
 
   function createColorDiv(key, value) {
-    return <div> {value.map((entry) => <div style={{background : entry[0], height : (entry[2] / entry[3]) * 200, width: 50}} onClick={(e) => setHSVState(e, entry[0], entry[1])}> </div>)} </div>
+    return (
+      <div> 
+        {value.map((entry) => <div style={{background : entry[0], height : (entry[2] / entry[3]) * COLOR_DIV_HEIGHT, width: COLOR_DIV_WIDTH}} 
+                                   onClick={(e) => setHSVState(e, entry[0], entry[1])}> </div>)} 
+      </div>
+    );
   }
 
   let renderedImage;
   if (file != null) {
-    renderedImage = <img src={URL.createObjectURL(file)} alt="user-uploaded" style={{height: 300}}></img>;
+    renderedImage = <img src={URL.createObjectURL(file)} alt="user-uploaded" style={{height: COLOR_DIV_HEIGHT}}></img>;
   }
 
 

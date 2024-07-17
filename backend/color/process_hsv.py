@@ -43,19 +43,75 @@ def process_hsv(h, s, v):
                      create_split(h, s, v, 50, 0, 0)]
     splits.append(hue_split_mid)
 
-    hue_split_tiered = [create_split(h, s, v, -60, 0, 0), 
-                        create_split(h, s, v, -40, 0, 0), 
-                        create_split(h, s, v, -30, 0, 0),
+    hue_split_tiered = [create_split(h, s, v, -40, 0, 0), 
+                        create_split(h, s, v, -30, 0, 0), 
+                        create_split(h, s, v, -20, 0, 0),
                         create_split(h, s, v, -10, 0, 0),
                         curr, 
                         create_split(h, s, v, 10, 0, 0),
+                        create_split(h, s, v, 20, 0, 0),
                         create_split(h, s, v, 30, 0, 0),
                         create_split(h, s, v, 40, 0, 0),
-                        create_split(h, s, v, 60, 0, 0),
                         create_split(h, s, v, 127.5, 0, 0),
                         create_split(h, s, v, 127.5, 0, 0),
                         create_split(h, s, v, 127.5, 0, 0)]
     splits.append(hue_split_tiered)
+
+    hue_split_tiered_hs_1 = [create_split(h, s, v, -40, -20, -20), 
+                            create_split(h, s, v, -30, -20, -20), 
+                            create_split(h, s, v, -20, -20, -20),
+                            create_split(h, s, v, -10, -20, -20),
+                            create_split(h, s, v, 0, -20, -20), 
+                            create_split(h, s, v, 10, -20, -20),
+                            create_split(h, s, v, 20, -20, -20),
+                            create_split(h, s, v, 30, -20, -20),
+                            create_split(h, s, v, 40, -20, -20),
+                            create_split(h, s, v, 127.5, 20, 20),
+                            create_split(h, s, v, 127.5, 20, 20),
+                            create_split(h, s, v, 127.5, 20, 20)]
+    splits.append(hue_split_tiered_hs_1)
+
+    hue_split_tiered_hs_2 = [create_split(h, s, v, -40, -20, 20), 
+                            create_split(h, s, v, -30, -20, 20), 
+                            create_split(h, s, v, -20, -20, 20),
+                            create_split(h, s, v, -10, -20, 20),
+                            create_split(h, s, v, 0, -20, 20), 
+                            create_split(h, s, v, 10, -20, 20),
+                            create_split(h, s, v, 20, -20, 20),
+                            create_split(h, s, v, 30, -20, 20),
+                            create_split(h, s, v, 40, -20, 20),
+                            create_split(h, s, v, 127.5, 20, -20),
+                            create_split(h, s, v, 127.5, 20, -20),
+                            create_split(h, s, v, 127.5, 20, -20)]
+    splits.append(hue_split_tiered_hs_2)
+
+    hue_split_tiered_hs_3 = [create_split(h, s, v, -40, 20, -20), 
+                            create_split(h, s, v, -30, 20, -20), 
+                            create_split(h, s, v, -20, 20, -20),
+                            create_split(h, s, v, -10, 20, -20),
+                            create_split(h, s, v, 0, 20, -20), 
+                            create_split(h, s, v, 10, 20, -20),
+                            create_split(h, s, v, 20, 20, -20),
+                            create_split(h, s, v, 30, 20, -20),
+                            create_split(h, s, v, 40, 20, -20),
+                            create_split(h, s, v, 127.5, -20, 20),
+                            create_split(h, s, v, 127.5, -20, 20),
+                            create_split(h, s, v, 127.5, -20, 20)]
+    splits.append(hue_split_tiered_hs_3)
+
+    hue_split_tiered_hs_4 = [create_split(h, s, v, -40, 20, 20), 
+                            create_split(h, s, v, -30, 20, 20), 
+                            create_split(h, s, v, -20, 20, 20),
+                            create_split(h, s, v, -10, 20, 20),
+                            create_split(h, s, v, 0, 20, 20), 
+                            create_split(h, s, v, 10, 20, 20),
+                            create_split(h, s, v, 20, 20, 20),
+                            create_split(h, s, v, 30, 20, 20),
+                            create_split(h, s, v, 40, 20, 20),
+                            create_split(h, s, v, 127.5, -20, -20),
+                            create_split(h, s, v, 127.5, -20, -20),
+                            create_split(h, s, v, 127.5, -20, -20)]
+    splits.append(hue_split_tiered_hs_4)
 
     hue_split_triangle = [create_split(h, s, v, -85, 0, 0), 
                           create_split(h, s, v, -85, 0, 0), 
@@ -117,5 +173,180 @@ def process_hsv(h, s, v):
             create_split(h, s, v, -30, 60, 30),
             create_split(h, s, v, -40, 70, 40)]
     splits.append(ld_4)
+
+    hue_split_o_half = [create_split(h, s, v, 60, 0, 0), 
+                        create_split(h, s, v, 40, 0, 0),
+                        create_split(h, s, v, 30, 0, 0),
+                        create_split(h, s, v, 20, 0, 0),
+                        create_split(h, s, v, 10, 0, 0),
+                        create_split(h, s, v, 167.5, 0, 0),
+                        create_split(h, s, v, 167.5, 0, 0),
+                        create_split(h, s, v, 167.5, 0, 0)]
+    splits.append(hue_split_o_half)
+
+    hue_split_o_half_1 = [create_split(h, s, v, 60, -50, -50), 
+                        create_split(h, s, v, 40, -40, -40),
+                        create_split(h, s, v, 30, -30, -30),
+                        create_split(h, s, v, 20, -20, -20),
+                        create_split(h, s, v, 10, -10, -10),
+                        create_split(h, s, v, 167.5, 30, 30),
+                        create_split(h, s, v, 167.5, 30, 30),
+                        create_split(h, s, v, 167.5, 30, 30)]
+    splits.append(hue_split_o_half_1)
+
+    hue_split_o_half_2 = [create_split(h, s, v, 60, -50, 50), 
+                        create_split(h, s, v, 40, -40, 40),
+                        create_split(h, s, v, 30, -30, 30),
+                        create_split(h, s, v, 20, -20, 20),
+                        create_split(h, s, v, 10, -10, 10),
+                        create_split(h, s, v, 167.5, 30, -30),
+                        create_split(h, s, v, 167.5, 30, -30),
+                        create_split(h, s, v, 167.5, 30, -30)]
+    splits.append(hue_split_o_half_2)
+
+    hue_split_o_half_3 = [create_split(h, s, v, 60, 50, -50), 
+                        create_split(h, s, v, 40, 40, -40),
+                        create_split(h, s, v, 30, 30, -30),
+                        create_split(h, s, v, 20, 20, -20),
+                        create_split(h, s, v, 10, 10, -10),
+                        create_split(h, s, v, 167.5, -30, 30),
+                        create_split(h, s, v, 167.5, -30, 30),
+                        create_split(h, s, v, 167.5, -30, 30)]
+    splits.append(hue_split_o_half_3)
+
+    hue_split_o_half_4 = [create_split(h, s, v, 60, 50, 50), 
+                        create_split(h, s, v, 40, 40, 40),
+                        create_split(h, s, v, 30, 30, 30),
+                        create_split(h, s, v, 20, 20, 20),
+                        create_split(h, s, v, 10, 10, 10),
+                        create_split(h, s, v, 167.5, -30, -30),
+                        create_split(h, s, v, 167.5, -30, -30),
+                        create_split(h, s, v, 167.5, -30, -30)]
+    splits.append(hue_split_o_half_4)
+
+    hue_split_half = [create_split(h, s, v, -60, 0, 0), 
+                      create_split(h, s, v, -40, 0, 0),
+                      create_split(h, s, v, -30, 0, 0),
+                      create_split(h, s, v, -20, 0, 0),
+                      create_split(h, s, v, -10, 0, 0),
+                      create_split(h, s, v, 87.5, 0, 0),
+                      create_split(h, s, v, 87.5, 0, 0),
+                      create_split(h, s, v, 87.5, 0, 0)]
+    splits.append(hue_split_half)
+
+    hue_split_half_1 = [create_split(h, s, v, -60, -50, -50), 
+                      create_split(h, s, v, -40, -40, -40),
+                      create_split(h, s, v, -30, -30, -30),
+                      create_split(h, s, v, -20, -20, -20),
+                      create_split(h, s, v, -10, -10, -10),
+                      create_split(h, s, v, 87.5, 30, 30),
+                      create_split(h, s, v, 87.5, 30, 30),
+                      create_split(h, s, v, 87.5, 30, 30)]
+    splits.append(hue_split_half_1)
+
+    hue_split_half_2 = [create_split(h, s, v, -60, -50, 50), 
+                      create_split(h, s, v, -40, -40, 40),
+                      create_split(h, s, v, -30, -30, 30),
+                      create_split(h, s, v, -20, -20, 20),
+                      create_split(h, s, v, -10, -10, 10),
+                      create_split(h, s, v, 87.5, 30, -30),
+                      create_split(h, s, v, 87.5, 30, -30),
+                      create_split(h, s, v, 87.5, 30, -30)]
+    splits.append(hue_split_half_2)
+
+    hue_split_half_3 = [create_split(h, s, v, -60, 50, -50), 
+                      create_split(h, s, v, -40, 40, -40),
+                      create_split(h, s, v, -30, 30, -30),
+                      create_split(h, s, v, -20, 20, -20),
+                      create_split(h, s, v, -10, 10, -10),
+                      create_split(h, s, v, 87.5, -30, 30),
+                      create_split(h, s, v, 87.5, -30, 30),
+                      create_split(h, s, v, 87.5, -30, 30)]
+    splits.append(hue_split_half_3)
+
+    hue_split_half_4 = [create_split(h, s, v, -60, 50, 50), 
+                      create_split(h, s, v, -40, 40, 40),
+                      create_split(h, s, v, -30, 30, 30),
+                      create_split(h, s, v, -20, 20, 20),
+                      create_split(h, s, v, -10, 10, 10),
+                      create_split(h, s, v, 87.5, -30, -30),
+                      create_split(h, s, v, 87.5, -30, -30),
+                      create_split(h, s, v, 87.5, -30, -30)]
+    splits.append(hue_split_half_4)
+
+    complementary = [create_split(h, s, v, 167.5, 0, 0),
+                     create_split(h, s, v, 157.5, 0, 0),
+                     create_split(h, s, v, 147.5, 0, 0),
+                     create_split(h, s, v, 137.5, 0, 0),
+                     create_split(h, s, v, 127.5, 0, 0),
+                     create_split(h, s, v, 127.5, 0, 0),
+                     create_split(h, s, v, 117.5, 0, 0),
+                     create_split(h, s, v, 107.5, 0, 0),
+                     create_split(h, s, v, 97.5, 0, 0),
+                     create_split(h, s, v, 87.5, 0, 0),
+                     curr,
+                     curr,
+                     curr]
+    splits.append(complementary)
+
+    complementary_1 = [create_split(h, s, v, 167.5, 20, 20),
+                     create_split(h, s, v, 157.5, 20, 20),
+                     create_split(h, s, v, 147.5, 20, 20),
+                     create_split(h, s, v, 137.5, 20, 20),
+                     create_split(h, s, v, 127.5, 20, 20),
+                     create_split(h, s, v, 127.5, 20, 20),
+                     create_split(h, s, v, 117.5, 20, 20),
+                     create_split(h, s, v, 107.5, 20, 20),
+                     create_split(h, s, v, 97.5, 20, 20),
+                     create_split(h, s, v, 87.5, 20, 20),
+                     create_split(h, s, v, 0, -20, -20),
+                     create_split(h, s, v, 0, -20, -20),
+                     create_split(h, s, v, 0, -20, -20)]
+    splits.append(complementary_1)
+
+    complementary_2 = [create_split(h, s, v, 167.5, -20, -20),
+                     create_split(h, s, v, 157.5, -20, -20),
+                     create_split(h, s, v, 147.5, -20, -20),
+                     create_split(h, s, v, 137.5, -20, -20),
+                     create_split(h, s, v, 127.5, -20, -20),
+                     create_split(h, s, v, 127.5, -20, -20),
+                     create_split(h, s, v, 117.5, -20, -20),
+                     create_split(h, s, v, 107.5, -20, -20),
+                     create_split(h, s, v, 97.5, -20, -20),
+                     create_split(h, s, v, 87.5, -20, -20),
+                     create_split(h, s, v, 0, 20, 20),
+                     create_split(h, s, v, 0, 20, 20),
+                     create_split(h, s, v, 0, 20, 20)]
+    splits.append(complementary_2)
+
+    complementary_3 = [create_split(h, s, v, 167.5, -20, 20),
+                     create_split(h, s, v, 157.5, -20, 20),
+                     create_split(h, s, v, 147.5, -20, 20),
+                     create_split(h, s, v, 137.5, -20, 20),
+                     create_split(h, s, v, 127.5, -20, 20),
+                     create_split(h, s, v, 127.5, -20, 20),
+                     create_split(h, s, v, 117.5, -20, 20),
+                     create_split(h, s, v, 107.5, -20, 20),
+                     create_split(h, s, v, 97.5, -20, 20),
+                     create_split(h, s, v, 87.5, -20, 20),
+                     create_split(h, s, v, 0, 20, -20),
+                     create_split(h, s, v, 0, 20, -20),
+                     create_split(h, s, v, 0, 20, -20)]
+    splits.append(complementary_3)
+
+    complementary_4 = [create_split(h, s, v, 167.5, 20, -20),
+                     create_split(h, s, v, 157.5, 20, -20),
+                     create_split(h, s, v, 147.5, 20, -20),
+                     create_split(h, s, v, 137.5, 20, -20),
+                     create_split(h, s, v, 127.5, 20, -20),
+                     create_split(h, s, v, 127.5, 20, -20),
+                     create_split(h, s, v, 117.5, 20, -20),
+                     create_split(h, s, v, 107.5, 20, -20),
+                     create_split(h, s, v, 97.5, 20, -20),
+                     create_split(h, s, v, 87.5, 20, -20),
+                     create_split(h, s, v, 0, -20, 20),
+                     create_split(h, s, v, 0, -20, 20),
+                     create_split(h, s, v, 0, -20, 20)]
+    splits.append(complementary_4)
 
     return [orig_hexa, splits]

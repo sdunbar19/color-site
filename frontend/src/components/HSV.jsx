@@ -1,6 +1,10 @@
 import React, { useState} from 'react'; 
 import axios from "axios";
- 
+
+const COLOR_DIV_HEIGHT = 200
+const COLOR_DIV_WIDTH = 25
+const URL = 'http://127.0.0.1:8000/api/hsv/'
+
 const HSV = () => { 
     const [hue, setHue] = useState();
     const [saturation, setSaturation] = useState();
@@ -16,7 +20,7 @@ const HSV = () => {
         hsvData.set("hue", hue);
         hsvData.set("saturation", saturation);
         hsvData.set("value", value);
-        axios.post('http://127.0.0.1:8000/api/hsv/', hsvData, {
+        axios.post(URL, hsvData, {
           headers: {
             'content-type': 'multipart/form-data'
           }
@@ -59,7 +63,12 @@ const HSV = () => {
     }
 
     function createColorDiv(split) {
-      return <div> {split.map((entry) => <div style={{background : entry[0], height : (1 / split.length) * 200, width: 50}} onClick={(e) => setHSVState(e, entry[0], entry[1])}> </div>)} </div>
+      return (
+        <div> 
+          {split.map((entry) => <div style={{background : entry[0], height : (1 / split.length) * COLOR_DIV_HEIGHT, width: COLOR_DIV_WIDTH}} 
+                                     onClick={(e) => setHSVState(e, entry[0], entry[1])}> </div>)} 
+        </div>
+      ) 
     }
 
     let colors;
@@ -69,7 +78,7 @@ const HSV = () => {
 
     let colorBlock;
     if (colorRender != null) {
-      colorBlock = <div style={{background : colorRender, height: 100, width: 200}}></div>
+      colorBlock = <div style={{background : colorRender, height: COLOR_DIV_HEIGHT / 2, width: COLOR_DIV_WIDTH * 8}}></div>
     }
 
     let hsvObj;
