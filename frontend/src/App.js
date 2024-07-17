@@ -7,8 +7,10 @@ function App() {
     <div> 
       <h1> Color Analyzer </h1>
       <h2> Sarah Dunbar, Roulettech Round 1 Interview </h2>
-      <Image />
-      <HSV />
+      <div style={{display: "flex"}}>
+        <Image />
+        <HSV />
+      </div>
     </div> 
   ); 
 }

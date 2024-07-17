@@ -5,6 +5,7 @@ from rest_framework.response import Response
 from rest_framework import status
 import os
 from .process_image import *
+from .process_hsv import *
 
 class ImageView(APIView):
     def _get_img_absolute_path(self, image_name):
@@ -49,7 +50,8 @@ class HSVView(APIView):
         posts_serializer = HSVSerializer(data=request.data)
         if posts_serializer.is_valid():
             posts_serializer.save()
-            return Response(posts_serializer.data, status=status.HTTP_201_CREATED)
+            data = process_hsv(posts_serializer.data['hue'], posts_serializer.data['saturation'], posts_serializer.data['value'])
+            return Response(data, status=status.HTTP_201_CREATED)
         else:
             print('error', posts_serializer.errors)
             return Response(posts_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
