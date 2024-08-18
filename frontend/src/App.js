@@ -8,7 +8,7 @@ function App() {
       <div> 
         <div style={{background: "#FFFFFF"}}>
           <h1> Color Analyzer </h1>
-          <h2> Sarah Dunbar, Roulettech Round 1 Interview </h2>
+          <h2> Sarah Dunbar, Interview Project </h2>
         </div>
         <div style={{display: "flex"}}>
           <Image />
